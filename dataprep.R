@@ -3,7 +3,7 @@ View(data)
 
 dataprep = function(ind,df,variable,horizon,add_dummy = TRUE, univar = FALSE, factonly = FALSE, nofact = FALSE)
 
-  # ind: numero das linhas que serao usadadas do dataframe ao aplicar df=df[ind,]
+  # ind: indices das linhas que serao usadadas do dataframe ao aplicar df=df[ind,]
   # df: um data.frame
   # variable: nome da variavel do dataframe a ser analisada, será o y
   # horizon: horizonte de previsao, que determina quantas últimas observações serão retiradas da matriz X ao criar Xin e Xout
