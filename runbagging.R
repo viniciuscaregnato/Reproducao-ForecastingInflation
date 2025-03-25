@@ -1,3 +1,5 @@
+library(ipred)
+
 runbagging=function(ind,df,variable,horizon)
   # ind: observar dataprep para saber mais
   # df: observar dataprep para saber mais
