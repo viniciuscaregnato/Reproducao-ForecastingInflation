@@ -40,10 +40,10 @@ dataprep = function(ind,df,variable,horizon,add_dummy = TRUE, univar = FALSE, fa
   
   X=embed(as.matrix(x),4)                            # X é a matriz x, com 4 defasagens
   
-  Xin=X[-c((nrow(X)-horizon+1):nrow(X)),]            # remove as ultimas linhas, conforme variavel horizon q eu criar
+  Xin=X[-c((nrow(X)-horizon+1):nrow(X)),]            # remove as ultimas horizon+1 linhas
   Xout=X[nrow(X),]                                   # armazena em Xout os valores da ultima linha da matriz X, em forma de vetor
   Xout=t(as.vector(Xout))                            # garante que Xout seja de fato uma linha, n apenas um vetor
-  yin=tail(y,nrow(Xin))                              # yin pega o numero de linhas em Xin da variavel y definida la em cima através de y=df[,variable] 
+  yin=tail(y,nrow(Xin))                              # yin pega o numero de linhas de Xin da variavel y definida la em cima através de y=df[,variable] 
   
   
   
