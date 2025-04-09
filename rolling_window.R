@@ -21,7 +21,7 @@ rolling_window=function(fn,df,nwindow=1,horizon,variable,...)
   rw=apply(indmat,2,fn,df=df,horizon=horizon,variable=variable,...)
   # aqui estamos aplicando a função sobre a rolling window #
   # indmat: a matriz que contem as rolling window
-  # 2: função será aplicada nas colunas(2), nao das linhas(1)
+  # 2: função será aplicada nas colunas(2), nao nas linhas(1)
   # fn: função que será aplicada
   # df= dataframe
   # horizon: horizonte de previsao
