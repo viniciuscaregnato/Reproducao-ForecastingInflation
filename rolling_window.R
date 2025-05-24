@@ -26,12 +26,23 @@ rolling_window=function(fn,df,nwindow=1,horizon,variable,...)
   # df= dataframe
   # horizon: horizonte de previsao
   # variable: variavel alvo
-  """ apply retorna os resultados das janelas em forma de vetor"""
+  """ apply retorna os resultados e previsoes das janelas, ou seja,
+  rw <- list(
+  list(forecast = ..., results = ...),  # resultado da 1ª coluna(janela)
+  list(forecast = ..., results = ...),  # resultado da 2ª coluna(janela)
+  list(forecast = ..., results = ...)   # resultado da 3ª coluna(janela)
+            )"""
   
   forecast=unlist(lapply(rw,function(x)x$forecast))
-  # lapply() aplica a função function(x) ao vetor rw, definido acima
+  """ lapply() aplica a função " function(x){x$forecast} " a cada sublistas de rw,
+  assim, ele consegue extrair $forecasts de cada sublista. Afinal, rw nao tem nehum retorno $forecast, 
+  pois retorna apena uma lista, que contem listas"""
   
   outputs=lapply(rw,function(x)x$outputs)
+  """ lapply() aplica a função "function(x){x$outputs}" para cada sublistas contidas em rw,
+  assim, ele extrai examente o retorno $outputs das subslistas. afinal, rw pode apenas retornar
+ uma unica lista, que contem sublistas de forecast e outputs."""  
+    
   return(list(forecast=forecast, outputs=outputs))
   
 }
