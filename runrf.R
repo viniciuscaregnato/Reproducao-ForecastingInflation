@@ -3,7 +3,7 @@ library(randomForest)
 
 runrf=function(ind,df,variable,horizon)
    
-   # ind: indices das linhas q serao usadas 
+   # ind: indices das linhas q serao usadas, recebido pelo apply, que extraiu da indmat
    # df: o dataframe
    # variable: a variavel dependente
    # horizon: o horizonte de previsao
