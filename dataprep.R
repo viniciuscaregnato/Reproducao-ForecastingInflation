@@ -12,8 +12,8 @@ dataprep = function(ind,df,variable,horizon,add_dummy = TRUE, univar = FALSE, fa
 
 {
   
-  df=df[ind,]
-  y=df[,variable]
+  df=df[ind,]                                        # define as linhas de df conformeo indice indicado pela coluna de indmat
+  y=df[,variable]                                    # define y q contem todas as linhas do entao df
   
   if(nofact==TRUE){                                  # (Se nofact = TRUE, nao há PCA
     if(univar==FALSE){                               # (e se univar = FALSE,
