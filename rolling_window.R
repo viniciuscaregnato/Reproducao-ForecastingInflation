@@ -2,7 +2,7 @@ rolling_window=function(fn,df,nwindow=1,horizon,variable,...)
   
   # fn: função que será aplicada à rolling window
   # df: dataframe
-  # nwindow: numero de janelas que se pode observar um termo fora
+  # nwindow: numero de janelas que se pode observar um termo fora (out of sample) (n de previsoes)
   # horizon: horizonte de previsao
   # variable: variavel alvo
   # ...: demais paramertos que podem ser inclusos
@@ -10,8 +10,8 @@ rolling_window=function(fn,df,nwindow=1,horizon,variable,...)
   
 {
   ind=1:nrow(df)                                     # ind: indices das linhas que serao usadadas do dataframe ao aplicar df=df[ind,]
-  window_size=nrow(df)-nwindow                       # window_size: tamanho da janela
-  indmat=matrix(NA,window_size,nwindow)              # cria uma matriz indmat de tamanho (window_size × nwindow)
+  window_size=nrow(df)-nwindow                       # window_size: tamanho da janela insample
+  indmat=matrix(NA,window_size,nwindow)              # ccria uma matriz indmat de tamanho (window_size × nwindow) (indices de insample x numero da janela)
   indmat[1,]=1:ncol(indmat)                          # primeira linha são os indices iniciais de cada janela
   for(i in 2:nrow(indmat)){                          # demais indices de df para cada janela sao preenchidas
     indmat[i,]=indmat[i-1,]+1                        #
