@@ -1,6 +1,3 @@
-View(data)
-#abrir o arquivo "data.rda" antes de iniciar o trabalho
-
 dataprep = function(ind,df,variable,horizon,add_dummy = TRUE, univar = FALSE, factonly = FALSE, nofact = FALSE)
 
   # ind: indices das linhas que serao usadadas do dataframe ao aplicar df=df[ind,]
