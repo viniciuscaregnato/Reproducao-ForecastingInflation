@@ -38,9 +38,9 @@ rolling_window=function(fn,df,nwindow=1,horizon,variable,...)
   
   forecast=unlist(lapply(rw,function(x)x$forecast))
   
-  ## lapply() aplica a função " function(x){x$forecast} " a cada sublistas de rw,
+  ## lapply() aplica a função " function(x){x$forecast} " a cada sublista (list(...)) contidas em rw,
   ## assim, ele consegue extrair $forecasts de cada sublista. Afinal, rw nao tem nehum retorno $forecast, 
-  ## pois retorna apena uma lista, que contem listas
+  ## pois retorna apena uma lista, que contem listas de $forecast
   
   outputs=lapply(rw,function(x)x$outputs)
   
